@@ -1,0 +1,39 @@
+#navbar-container {
+  top: 0px;
+  height: 76px;
+  position: sticky;
+  background: transparent;
+  z-index: 9999;
+
+  .navbar-wrapper {
+    backdrop-filter: saturate(180%) blur(10px);
+    box-shadow: rgb(2 1 1 / 10%) 0px 5px 20px -5px;
+
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+
+    .navbar-left {
+      flex: 1;
+    }
+
+    .navbar-center {
+      flex: 1;
+      .navbar-navigation {
+        display: flex;
+        justify-content: space-around;
+      }
+    }
+
+    .navbar-right {
+      flex: 1;
+      display: flex;
+      justify-content: flex-end;
+
+      #button-signup {
+        margin-right: calc(1 * 1.25rem / 2);
+      }
+    }
+  }
+}
