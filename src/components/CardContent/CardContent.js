@@ -15,7 +15,7 @@ export const CardContent = () => (
     </Card.Header>
     <Card.Body>
       <Card.Image
-        src="https://nextui.org/images/card-example-5.jpeg"
+        src="https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/c522e2111877387.6009e3e81f5e8.jpg"
         height={400}
         width="100%"
         alt="Relaxing app background"

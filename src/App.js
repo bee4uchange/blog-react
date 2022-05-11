@@ -43,6 +43,18 @@ function App() {
           <Grid xs={12} sm={6} md={3}>
             <CardContent />
           </Grid>
+          <Grid xs={12} sm={6} md={3}>
+            <CardContent />
+          </Grid>
+          <Grid xs={12} sm={6} md={3}>
+            <CardContent />
+          </Grid>
+          <Grid xs={12} sm={6} md={3}>
+            <CardContent />
+          </Grid>
+          <Grid xs={12} sm={6} md={3}>
+            <CardContent />
+          </Grid>
         </Grid.Container>
       </Container>
     </div>
