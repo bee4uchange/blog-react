@@ -1,41 +1,35 @@
-import { Card, Container, Grid, Text } from "@nextui-org/react";
+import { Card, Container, Grid, Image, Text } from "@nextui-org/react";
 import { useMediaQuery } from "./helpers/useMediaQuery";
-import Header from "./components/Header";
+import Header from "./components/Header/Header";
 import "./App.scss";
+import { CardContent } from "./components/CardContent/CardContent";
 
 function App() {
   const isMd = useMediaQuery(960);
-
-  const MockItem = ({ text }) => {
-    return (
-      <Card color="primary" css={{ h: "$24" }}>
-        <Text h6 size={15} color="white" css={{ mt: 0 }}>
-          {text}
-        </Text>
-      </Card>
-    );
-  };
 
   return (
     <div className="App">
       <Header />
 
       <Container id="main-container">
+        <Image
+          src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/3b640b111877387.6009e4d80af41.jpg"
+          alt="Default Image"
+          objectFit="cover"
+        />
+
         <Grid.Container gap={2} justify="center">
-          <Grid xs={12} md={6}>
-            <MockItem text={isMd ? "1 of 1" : "1 of 2"} />
+          <Grid xs={12} sm={6} md={3}>
+            <CardContent />
           </Grid>
-          <Grid xs={6} md={6}>
-            <MockItem text={isMd ? "1 of 2" : "2 of 2"} />
+          <Grid xs={12} sm={6} md={3}>
+            <CardContent />
           </Grid>
-          <Grid xs={6} md={3}>
-            <MockItem text={isMd ? "2 of 2" : "1 of 3"} />
+          <Grid xs={12} sm={6} md={3}>
+            <CardContent />
           </Grid>
-          <Grid xs={6} md={3}>
-            <MockItem text={isMd ? "1 of 2" : "2 of 3"} />
-          </Grid>
-          <Grid xs={6} md={3}>
-            <MockItem text={isMd ? "2 of 2" : "3 of 3"} />
+          <Grid xs={12} sm={6} md={3}>
+            <CardContent />
           </Grid>
         </Grid.Container>
       </Container>

@@ -19,19 +19,21 @@ const Header = () => {
             justifyContent: "space-between",
           }}
         >
-          <div className="navbar-left">Logo here</div>
+          <div className="navbar-left">
+            <span className="logo">Tierra.</span>
+          </div>
           <div className="navbar-center">
             <div className="navbar-navigation">
-              <span>Home</span>
+              <span className="active">Home</span>
               <span>Blog</span>
               <span>About</span>
             </div>
           </div>
           <div className="navbar-right">
-            <Button bordered color="gradient" auto rounded id="button-signup">
+            <Button bordered color="primary" auto rounded id="button-signup">
               Sign up
             </Button>
-            <Button color="gradient" auto rounded>
+            <Button color="primary" auto rounded>
               Sign in
             </Button>
           </div>
