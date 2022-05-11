@@ -45,10 +45,10 @@ export const CardContent = () => (
             </Col>
             <Col>
               <Text color="#d1d1d1" size={12}>
-                Breathing App
+                Punzii
               </Text>
               <Text color="#d1d1d1" size={12}>
-                Get a good night's sleep.
+                2m ago
               </Text>
             </Col>
           </Row>
@@ -67,7 +67,7 @@ export const CardContent = () => (
                 weight="bold"
                 transform="uppercase"
               >
-                Get App
+                Read
               </Text>
             </Button>
           </Row>
