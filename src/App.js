@@ -18,6 +18,18 @@ function App() {
           objectFit="cover"
         />
 
+        <Text
+          h1
+          size={50}
+          css={{
+            textGradient: "45deg, $blue600 -20%, $pink600 50%",
+            paddingTop: '2rem'
+          }}
+          weight="bold"
+        >
+          For you
+        </Text>
+
         <Grid.Container gap={2} justify="center">
           <Grid xs={12} sm={6} md={3}>
             <CardContent />

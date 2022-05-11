@@ -1,7 +1,8 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
+import "./CardContent.styles.scss";
 
 export const CardContent = () => (
-  <Card cover css={{ w: "100%", p: 0 }}>
+  <Card cover css={{ w: "100%", p: 0 }} id="card-container">
     <Card.Header css={{ position: "absolute", zIndex: 1, top: 5 }}>
       <Col>
         <Text size={12} weight="bold" transform="uppercase" color="#9E9E9E">

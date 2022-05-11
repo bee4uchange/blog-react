@@ -30,10 +30,10 @@ const Header = () => {
             </div>
           </div>
           <div className="navbar-right">
-            <Button bordered color="primary" auto rounded id="button-signup">
+            <Button bordered color="gradient" auto rounded id="button-signup">
               Sign up
             </Button>
-            <Button color="primary" auto rounded>
+            <Button color="gradient" auto rounded>
               Sign in
             </Button>
           </div>
