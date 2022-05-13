@@ -1,5 +1,6 @@
 import { Card, Col, Row, Button, Text } from "@nextui-org/react";
 import "./CardContent.styles.scss";
+import { Link } from "react-router-dom";
 
 export const CardContent = () => (
   <Card cover css={{ w: "100%", p: 0 }} id="card-container">
@@ -54,23 +55,25 @@ export const CardContent = () => (
           </Row>
         </Col>
         <Col>
-          <Row justify="flex-end">
-            <Button
-              flat
-              auto
-              rounded
-              css={{ color: "#94f9f0", bg: "#94f9f026" }}
-            >
-              <Text
-                css={{ color: "inherit" }}
-                size={12}
-                weight="bold"
-                transform="uppercase"
+          <Link to={"/blog/post/1"}>
+            <Row justify="flex-end">
+              <Button
+                flat
+                auto
+                rounded
+                css={{ color: "#94f9f0", bg: "#94f9f026" }}
               >
-                Read
-              </Text>
-            </Button>
-          </Row>
+                <Text
+                  css={{ color: "inherit" }}
+                  size={12}
+                  weight="bold"
+                  transform="uppercase"
+                >
+                  Read
+                </Text>
+              </Button>
+            </Row>
+          </Link>
         </Col>
       </Row>
     </Card.Footer>

@@ -1,15 +1,10 @@
 import React from "react";
 import { Container, css, Button } from "@nextui-org/react";
 import "./Header.styles.scss";
+import { Link, NavLink } from "react-router-dom";
 
 const Header = () => {
   return (
-    // <nav id='navbar-container'>
-    //   <div className='navbar-wrapper'>
-
-    //   </div>
-    // </nav>
-
     <nav id="navbar-container">
       <div className="navbar-wrapper">
         <Container
@@ -20,13 +15,15 @@ const Header = () => {
           }}
         >
           <div className="navbar-left">
-            <span className="logo">Tierra.</span>
+            <Link to={"/"}>
+              <span className="logo">Tierra.</span>
+            </Link>
           </div>
           <div className="navbar-center">
             <div className="navbar-navigation">
-              <span className="active">Home</span>
-              <span>Blog</span>
-              <span>About</span>
+              <NavLink to={'/'}><span>Home</span></NavLink>
+              <NavLink to={'/blog'}><span>Blog</span></NavLink>
+              <NavLink to={'/about'}><span>About</span></NavLink>
             </div>
           </div>
           <div className="navbar-right">

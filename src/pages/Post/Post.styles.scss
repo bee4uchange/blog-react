@@ -1,0 +1,21 @@
+.post-container {
+  .post-wrapper {
+    padding: 0 10rem;
+
+    .post-header {
+      .post-title {
+        text-align: center;
+        padding: 2rem 0;
+      }
+    }
+
+    .post-body {
+      display: flex;
+      justify-content: center;
+    }
+
+    @media all and (max-width: 960px) {
+      padding: 0 1rem;
+    }
+  }
+}

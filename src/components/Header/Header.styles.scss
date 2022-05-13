@@ -9,6 +9,7 @@
     backdrop-filter: saturate(180%) blur(10px);
     box-shadow: rgb(2 1 1 / 10%) 0px 5px 20px -5px;
     background-color: hsla(0,0%,100%,0.8);
+    padding: 0 10rem;
 
     display: flex;
     width: 100%;
@@ -30,6 +31,10 @@
         display: flex;
         justify-content: space-around;
       }
+
+      @media all and (max-width: 960px) {
+        display: none;
+      }
     }
 
     .navbar-right {
@@ -40,6 +45,10 @@
       #button-signup {
         margin-right: calc(1 * 1.25rem / 2);
       }
+
+      @media all and (max-width: 960px) {
+        display: none;
+      }
     }
   }
 }
@@ -47,4 +56,8 @@
 .active {
   font-weight: 600;
   color: #0072F5;
+}
+
+a {
+  color: black;
 }
