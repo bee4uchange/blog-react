@@ -10,16 +10,15 @@ function Home() {
     <div className="App">
       <Container id="main-container">
         <Image
-          src="https://mir-s3-cdn-cf.behance.net/project_modules/fs/3b640b111877387.6009e4d80af41.jpg"
+          src="https://i0.wp.com/9to5google.com/wp-content/uploads/sites/4/2022/04/google-io-2022-cover.jpeg?w=2000&quality=82&strip=all&ssl=1"
           alt="Default Image"
           objectFit="cover"
         />
 
         <Text
-          h1
-          size={50}
+          size={40}
           css={{
-            textGradient: "45deg, $blue600 -20%, $pink600 50%",
+            paddingLeft: 'calc(2 * 0.375rem)',
             paddingTop: '2rem'
           }}
           weight="bold"
