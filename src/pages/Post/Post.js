@@ -1,6 +1,15 @@
 import React from "react";
-import { Container, Image, Text, Textarea } from "@nextui-org/react";
+import {
+  Avatar,
+  Button,
+  Container,
+  Image,
+  Text,
+  User,
+} from "@nextui-org/react";
 import "./Post.styles.scss";
+import { Textarea } from "@nextui-org/react";
+import Comment from "../../components/Comment/Comment";
 
 const Post = () => {
   return (
@@ -9,12 +18,24 @@ const Post = () => {
         <div className="post-wrapper">
           <div className="post-header">
             <div className="post-title">
-              <Text h1 size={50} weight="bold">
+              <Text h1 weight="bold">
                 Multiple models of Google Pixel 6a pass through FCC, pointing to
                 wider international release
               </Text>
             </div>
-            <div className="post-info"></div>
+            <div className="post-info">
+              <div className="post-author">
+                <User
+                  src="https://i.pravatar.cc/150?u=a04258114e29026702d"
+                  name="Jane Fisher"
+                  size="sm"
+                />
+              </div>
+
+              <div className="post-time">
+                <span>12m ago</span>
+              </div>
+            </div>
           </div>
 
           <Image
@@ -71,9 +92,21 @@ const Post = () => {
             </Text>
           </div>
 
-          <div className="post-footer">
-           <textarea />
+          <div className="post-comment">
+            <Comment />
+            <Comment />
+            <Comment />
+
+            <div>
+              <Avatar text="Joe" size="md" className="comment-avatar" />
+              <Textarea
+                initialValue="Almost before we knew it, we had left the ground."
+                css={{ flex: "1" }}
+              />
+            </div>
           </div>
+
+          <div className="post-footer"></div>
         </div>
       </div>
     </Container>

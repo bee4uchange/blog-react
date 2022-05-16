@@ -1,11 +1,41 @@
 .post-container {
   .post-wrapper {
-    padding: 0 10rem;
+    padding: 2rem 10rem;
 
     .post-header {
+      padding: 2rem 0;
       .post-title {
         text-align: center;
-        padding: 2rem 0;
+      }
+
+      .post-info {
+        display: flex;
+        align-items: center;
+        padding-top: 1rem;
+        justify-content: center;
+
+        .post-author {
+          display: flex;
+          align-items: center;
+
+          .avatar {
+            margin-right: 0.5rem;
+          }
+        }
+
+        .post-time {
+          color: grey;
+          padding-left: 1rem;
+          font-size: small;
+        }
+
+        .post-tag {
+          .tag {
+            box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
+            padding: 0.5rem;
+            border-radius: 50px;
+          }
+        }
       }
     }
 
@@ -14,8 +44,18 @@
       justify-content: center;
     }
 
+    .post-comment {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+
+      .comment-avatar {
+        margin-right: 0.5rem;
+      }
+    }
+
     @media all and (max-width: 960px) {
-      padding: 0 1rem;
+      padding: unset;
     }
   }
 }

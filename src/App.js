@@ -3,6 +3,8 @@ import "./App.scss";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home/Home";
 import Post from "./pages/Post/Post";
+import Footer from './components/Footer/Footer';
+import Signin from "./pages/Signin/Signin";
 
 function App() {
   return (
@@ -11,7 +13,9 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/blog/post/:id" element={<Post />}/>
+        <Route path="/signin" element={<Signin />}/>
       </Routes>
+      {/* <Footer /> */}
     </BrowserRouter>
   );
 }
