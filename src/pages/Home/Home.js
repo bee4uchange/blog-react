@@ -1,4 +1,4 @@
-import { Container, Grid, Image, Text } from "@nextui-org/react";
+import { Button, Container, Grid, Image, Input, Text } from "@nextui-org/react";
 import { useMediaQuery } from "../../helpers/useMediaQuery";
 import "./Home.styles.scss";
 import { CardContent } from "../../components/CardContent/CardContent";
@@ -15,11 +15,18 @@ function Home() {
           objectFit="cover"
         />
 
+        <div className="search-container">
+          <Input type="search" placeholder='Explore the world'/>
+          <Button color="gradient" auto>
+            Search
+          </Button>
+        </div>
+
         <Text
           size={40}
           css={{
-            paddingLeft: 'calc(2 * 0.375rem)',
-            paddingTop: '2rem'
+            paddingLeft: "calc(2 * 0.375rem)",
+            paddingTop: "2rem",
           }}
           weight="bold"
         >
@@ -27,12 +34,6 @@ function Home() {
         </Text>
 
         <Grid.Container gap={2} justify="center">
-          <Grid xs={12} sm={6} md={4}>
-            <CardContent />
-          </Grid>
-          <Grid xs={12} sm={6} md={4}>
-            <CardContent />
-          </Grid>
           <Grid xs={12} sm={6} md={4}>
             <CardContent />
           </Grid>
