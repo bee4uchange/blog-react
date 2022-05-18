@@ -49,6 +49,14 @@
       justify-content: center;
       flex-direction: column;
 
+      .comment-wrapper {
+        padding: 1rem 15rem;
+
+        @media all and (max-width: 960px) {
+          padding: 1rem 0;
+        }
+      }
+
       .comment-avatar {
         margin-right: 0.5rem;
       }

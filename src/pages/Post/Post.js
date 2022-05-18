@@ -93,16 +93,22 @@ const Post = () => {
           </div>
 
           <div className="post-comment">
-            <Comment />
-            <Comment />
-            <Comment />
-
-            <div>
-              <Avatar text="Joe" size="md" className="comment-avatar" />
-              <Textarea
-                initialValue="Almost before we knew it, we had left the ground."
-                css={{ flex: "1" }}
-              />
+            <div className="comment-wrapper">
+              <div style={{ display: "flex", marginBottom: "5rem", alignItems: 'center' }}>
+                <Textarea
+                  placeholder="What do you think?"
+                  css={{ flex: "1", paddingRight: "0.5rem" }}
+                />
+                <Button auto>Send</Button>
+              </div>
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
+              <Comment />
             </div>
           </div>
 

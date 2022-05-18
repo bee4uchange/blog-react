@@ -1,6 +1,7 @@
 .comment {
   display: flex;
-  padding: 1rem 15rem;
+  flex-direction: column;
+  margin-bottom: 1rem;
 
   .comment-avatar {
     margin-right: 0.5rem;
