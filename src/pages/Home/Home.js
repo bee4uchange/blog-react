@@ -2,18 +2,23 @@ import {
   Button,
   Container,
   Grid,
-  Image,
   Input,
   Pagination,
   Text,
 } from "@nextui-org/react";
-import { useMediaQuery } from "../../helpers/useMediaQuery";
 import "./Home.styles.scss";
 import CardContent from "../../components/CardContent/CardContent";
+import Footer from "../../components/Footer/Footer";
+import { useLocation } from "react-router-dom";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { getPosts } from "../../actions/posts";
+
+function useQuery() {
+  return new URLSearchParams(useLocation().search);
+}
 
 function Home() {
-  const isMd = useMediaQuery(960);
-
   const imageList = [
     {
       title: "Google previews the Pixel Watch, coming this fall with Pixel 7",
@@ -48,11 +53,23 @@ function Home() {
       url: "https://i0.wp.com/9to5google.com/wp-content/uploads/sites/4/2022/05/pixel-watch-io-2.jpg?w=2000&quality=82&strip=all&ssl=1",
     },
   ];
+  const query = useQuery();
+  const page = query.get("page") || 1;
+  const [currentId, setCurrentId] = useState(0);
+  const dispatch = useDispatch();
+
+  const { posts, isLoading } = useSelector((state) => state.posts);
+
+  useEffect(() => {
+    dispatch(getPosts());
+  }, [dispatch]);
+
+  console.log(posts)
 
   return (
     <div className="App">
       <Container id="main-container">
-        <CardContent data={imageList[0]}/>
+        {posts.length > 0 && <CardContent data={posts[0]} />}
 
         <div className="search-container">
           <div className="search-wrapper">
@@ -75,17 +92,19 @@ function Home() {
         </Text>
 
         <Grid.Container gap={2} justify="center">
-          {imageList.slice(1).map((data, index) => (
+          {posts.slice(1).map((data, index) => (
             <Grid xs={12} sm={6} md={4} key={index}>
-              <CardContent data={data} index={index}/>
+              <CardContent data={data} index={index} />
             </Grid>
           ))}
         </Grid.Container>
 
         <div className="pagination">
-          <Pagination rounded total={5} initialPage={1} />
+          <Pagination rounded total={5} initialPage={page} />
         </div>
       </Container>
+
+      <Footer />
     </div>
   );
 }
