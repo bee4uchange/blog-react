@@ -44,16 +44,6 @@
       justify-content: center;
     }
 
-    .post-comment {
-      display: flex;
-      justify-content: center;
-      flex-direction: column;
-
-      .comment-avatar {
-        margin-right: 0.5rem;
-      }
-    }
-
     @media all and (max-width: 960px) {
       padding: unset;
     }
