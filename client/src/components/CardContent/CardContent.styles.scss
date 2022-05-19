@@ -37,7 +37,7 @@ h1 {
   }
   .wrapper {
     background-color: $white;
-    min-height: 540px;
+    min-height: 500px;
     position: relative;
     overflow: hidden;
     box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.05);
@@ -74,6 +74,9 @@ h1 {
   .text {
     height: 70px;
     margin: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
   }
   input[type="checkbox"] {
     display: none;

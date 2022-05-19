@@ -16,19 +16,6 @@ const Post = () => {
   const { post, isLoading } = useSelector((state) => state.posts);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
-  const [postData, setPostData] = useState({
-    title: post?.title,
-    message: post?.message,
-    tags: [],
-    selectedFile: post?.selectedFile,
-  });
-
-  console.log(postData);
-
-  const clear = () => {
-    setPostData({ title: "", message: "", tags: [], selectedFile: "" });
-  };
-
   const handleDelete = async (e) => {
     // e.preventDefault();
     dispatch(deletePost(id));
