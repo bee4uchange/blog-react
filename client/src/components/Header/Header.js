@@ -25,8 +25,6 @@ const Header = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
   const location = useLocation();
 
-  console.log(user);
-
   const [postData, setPostData] = useState({
     title: "",
     message: "",

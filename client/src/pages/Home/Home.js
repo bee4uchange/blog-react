@@ -71,15 +71,6 @@ function Home() {
       <Container id="main-container">
         {posts.length > 0 && <CardContent data={posts[0]} />}
 
-        <div className="search-container">
-          <div className="search-wrapper">
-            <Input type="search" placeholder="Explore the world" rounded />
-            <Button color="primary" auto rounded>
-              Search
-            </Button>
-          </div>
-        </div>
-
         <Text
           size={40}
           css={{
