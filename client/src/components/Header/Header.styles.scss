@@ -23,6 +23,10 @@
         font-family: 'Righteous', cursive;
         font-size: 2rem;
       }
+
+      @media all and (max-width: 960px) {
+        flex: unset;
+      }
     }
 
     .navbar-center {
@@ -53,9 +57,9 @@
         margin-right: calc(1 * 1.25rem / 2);
       }
 
-      @media all and (max-width: 960px) {
-        display: none;
-      }
+      // @media all and (max-width: 960px) {
+      //   display: none;
+      // }
     }
 
     @media all and (max-width: 1280px) {

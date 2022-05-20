@@ -1,24 +1,16 @@
 import {
   Container,
   Grid,
-  Pagination,
   Text,
 } from "@nextui-org/react";
 import "./Home.styles.scss";
 import CardContent from "../../components/CardContent/CardContent";
 import Footer from "../../components/Footer/Footer";
-import { useLocation } from "react-router-dom";
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "../../actions/posts";
 
-function useQuery() {
-  return new URLSearchParams(useLocation().search);
-}
-
 function Home() {
-  const query = useQuery();
-  const page = query.get("page") || 1;
   const dispatch = useDispatch();
 
   const { posts } = useSelector((state) => state.posts);
@@ -50,6 +42,7 @@ function Home() {
             </Grid>
           ))}
         </Grid.Container>
+        
       </Container>
 
       <Footer />

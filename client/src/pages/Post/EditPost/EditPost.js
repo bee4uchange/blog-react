@@ -3,6 +3,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
 import { getPost, updatePost } from "../../../actions/posts";
+import "./EditPost.styles.scss";
 
 const EditPost = () => {
   const { id } = useParams();
@@ -27,8 +28,10 @@ const EditPost = () => {
 
   return (
     <div className="edit-container" style={{ paddingTop: "8rem" }}>
-      <div className="edit-wrapper" style={{ width: "30%", margin: "0 auto" }}>
-        <Text h2 css={{ textAlign: 'center' }}>Edit Post</Text>
+      <div className="edit-wrapper">
+        <Text h2 css={{ textAlign: "center" }}>
+          Edit Post
+        </Text>
         <form onSubmit={handleSubmit}>
           <Input
             clearable

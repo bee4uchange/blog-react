@@ -29,22 +29,6 @@ const Signin = () => {
   return (
     <div className="signin-container">
       <div className="signin-wrapper">
-        <Input
-          clearable
-          label="Username"
-          placeholder="Enter your name"
-          className="username"
-        />
-        <Input
-          clearable
-          type="password"
-          label="Password"
-          placeholder="Enter your password"
-          className="password"
-        />
-        <Button rounded css={{ marginBottom: "1rem" }}>
-          Sign in
-        </Button>
         <GoogleLogin
           clientId="564033717568-bu2nr1l9h31bhk9bff4pqbenvvoju3oq.apps.googleusercontent.com"
           render={(renderProps) => (

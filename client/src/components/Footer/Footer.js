@@ -113,10 +113,7 @@ const Footer = () => {
               </a>
             </li>
             <li>
-              <a
-                href="/faq.html"
-                className="generic-anchor footer-list-anchor"
-              >
+              <a href="/faq.html" className="generic-anchor footer-list-anchor">
                 FAQ
               </a>
             </li>
@@ -200,8 +197,7 @@ const Footer = () => {
               </a>
             </span>
             <div className="footer-bottom-wrapper">
-              <i className="fa fa-copyright" role="copyright"></i> 2019 Pavilion in
-              Bergen, NY - All Rights Reserved -
+              © 2019 Pavilion in Bergen, NY - All Rights Reserved -
             </div>
           </section>
         </div>
