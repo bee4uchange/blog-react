@@ -8,7 +8,6 @@ import {
   UPDATE,
   DELETE,
   COMMENT,
-  FETCH_BY_CREATOR,
 } from "../constants/actionTypes";
 import * as api from "../api/index.js";
 
@@ -43,9 +42,22 @@ export const getPosts = (page) => async (dispatch) => {
   }
 };
 
+export const getPostsBySearch = (searchQuery) => async (dispatch) => {
+  try {
+    dispatch({ type: START_LOADING });
+    const {
+      data: { data },
+    } = await api.fetchPostsBySearch(searchQuery);
+
+    dispatch({ type: FETCH_BY_SEARCH, payload: { data } });
+    dispatch({ type: END_LOADING });
+  } catch (error) {
+    console.log(error);
+  }
+};
+
 export const createPost = (post, navigate) => async (dispatch) => {
   try {
-    console.log(post);
     dispatch({ type: START_LOADING });
     const { data } = await api.createPost(post);
 

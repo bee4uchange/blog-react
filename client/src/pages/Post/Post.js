@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Button, Container, Image, Text, User } from "@nextui-org/react";
 import "./Post.styles.scss";
 import Comment from "../../components/Comment/Comment";
@@ -17,7 +17,6 @@ const Post = () => {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
 
   const handleDelete = async (e) => {
-    // e.preventDefault();
     dispatch(deletePost(id));
     navigate("/posts");
   };
@@ -45,7 +44,7 @@ const Post = () => {
                 </div>
                 <div className="post-info">
                   <div className="post-author">
-                    <User text={post?.name} name={post?.name} size="sm" />
+                    <User src={post?.avatar} name={post?.name} size="sm" />
                   </div>
 
                   <div className="post-time">
@@ -69,7 +68,7 @@ const Post = () => {
               </div>
 
               <Image
-                src={post?.selectedFile}
+                src={post?.coverURL}
                 alt="Default Image"
                 objectFit="cover"
                 width={1200}

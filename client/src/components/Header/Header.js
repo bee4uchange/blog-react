@@ -28,8 +28,7 @@ const Header = () => {
   const [postData, setPostData] = useState({
     title: "",
     message: "",
-    tags: [],
-    selectedFile: "",
+    coverURL: "",
   });
 
   const clear = () => {
@@ -46,7 +45,16 @@ const Header = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log("ok");
-    dispatch(createPost({ ...postData, name: user?.result?.name }, navigate));
+    dispatch(
+      createPost(
+        {
+          ...postData,
+          name: user?.result?.name,
+          avatar: user?.result?.imageUrl,
+        },
+        navigate
+      )
+    );
     clear();
     setVisible(false);
   };
@@ -144,9 +152,9 @@ const Header = () => {
                     color="primary"
                     size="lg"
                     placeholder="Cover URL"
-                    value={postData.selectedFile}
+                    value={postData.coverURL}
                     onChange={(e) =>
-                      setPostData({ ...postData, selectedFile: e.target.value })
+                      setPostData({ ...postData, coverURL: e.target.value })
                     }
                   />
                 </Modal.Body>

@@ -1,4 +1,4 @@
-import { Button, Input, Textarea } from "@nextui-org/react";
+import { Button, Input, Textarea, Text } from "@nextui-org/react";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router-dom";
@@ -9,7 +9,7 @@ const EditPost = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { post, isLoading } = useSelector((state) => state.posts);
+  const { post } = useSelector((state) => state.posts);
 
   const [postData, setPostData] = useState(post);
   const [user, setUser] = useState(JSON.parse(localStorage.getItem("profile")));
@@ -26,56 +26,64 @@ const EditPost = () => {
   }, [id]);
 
   return (
-    <form onSubmit={handleSubmit}>
-      <Input
-        clearable
-        bordered
-        fullWidth
-        color="primary"
-        size="lg"
-        placeholder="Title"
-        value={postData?.title}
-        onChange={(e) =>
-          setPostData({
-            ...postData,
-            title: e.target.value,
-          })
-        }
-      />
-      <Textarea
-        clearable
-        bordered
-        fullWidth
-        color="primary"
-        size="lg"
-        placeholder="What do you think?"
-        value={postData?.message}
-        onChange={(e) =>
-          setPostData({
-            ...postData,
-            message: e.target.value,
-          })
-        }
-      />
-      <Input
-        clearable
-        bordered
-        fullWidth
-        color="primary"
-        size="lg"
-        placeholder="Cover URL"
-        value={postData?.selectedFile}
-        onChange={(e) =>
-          setPostData({
-            ...postData,
-            selectedFile: e.target.value,
-          })
-        }
-      />
-      <Button auto css={{ width: "100%" }} type="submit">
-        Update
-      </Button>
-    </form>
+    <div className="edit-container" style={{ paddingTop: "8rem" }}>
+      <div className="edit-wrapper" style={{ width: "30%", margin: "0 auto" }}>
+        <Text h2 css={{ textAlign: 'center' }}>Edit Post</Text>
+        <form onSubmit={handleSubmit}>
+          <Input
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="Title"
+            value={postData?.title}
+            onChange={(e) =>
+              setPostData({
+                ...postData,
+                title: e.target.value,
+              })
+            }
+            css={{ marginBottom: "1rem" }}
+          />
+          <Textarea
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="What do you think?"
+            value={postData?.message}
+            onChange={(e) =>
+              setPostData({
+                ...postData,
+                message: e.target.value,
+              })
+            }
+            css={{ marginBottom: "1rem" }}
+          />
+          <Input
+            clearable
+            bordered
+            fullWidth
+            color="primary"
+            size="lg"
+            placeholder="Cover URL"
+            value={postData?.coverURL}
+            onChange={(e) =>
+              setPostData({
+                ...postData,
+                coverURL: e.target.value,
+              })
+            }
+            css={{ marginBottom: "1rem" }}
+          />
+          <Button auto css={{ width: "100%" }} type="submit">
+            Update
+          </Button>
+        </form>
+      </div>
+    </div>
   );
 };
 

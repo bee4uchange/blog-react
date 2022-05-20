@@ -1,4 +1,4 @@
-import { Card, Col, Row, Button, Text, Avatar } from "@nextui-org/react";
+import { Avatar } from "@nextui-org/react";
 import "./CardContent.styles.scss";
 import { Link } from "react-router-dom";
 import React from "react";
@@ -10,23 +10,22 @@ const CardContent = ({ data, index }) => {
       <div
         className="wrapper"
         style={{
-          background: `linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.90) 100%), url(${data?.selectedFile}) center / cover no-repeat`,
+          background: `linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.90) 100%), url(${data?.coverURL}) center / cover no-repeat`,
         }}
       >
         <div className="header">
           <div className="date">{moment(data.createdAt).fromNow()}</div>
           <ul className="menu-content">
             <li>
-              <a href="#" className="fa fa-heart-o">
-                <span>18</span>
-              </a>
+              <div className="fa fa-heart-o">
+              </div>
             </li>
           </ul>
         </div>
         <div className="data">
           <div className="content">
             <span className="author">
-              <Avatar text={data?.name} size="sm" className="avatar" />
+              <Avatar src={data?.avatar} size="sm" className="avatar" />
               {data?.name}
             </span>
             <Link to={`/posts/${data?._id}`}>

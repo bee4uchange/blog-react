@@ -1,8 +1,6 @@
 import {
-  Button,
   Container,
   Grid,
-  Input,
   Pagination,
   Text,
 } from "@nextui-org/react";
@@ -10,7 +8,7 @@ import "./Home.styles.scss";
 import CardContent from "../../components/CardContent/CardContent";
 import Footer from "../../components/Footer/Footer";
 import { useLocation } from "react-router-dom";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { getPosts } from "../../actions/posts";
 
@@ -21,16 +19,13 @@ function useQuery() {
 function Home() {
   const query = useQuery();
   const page = query.get("page") || 1;
-  const [currentId, setCurrentId] = useState(0);
   const dispatch = useDispatch();
 
-  const { posts, isLoading } = useSelector((state) => state.posts);
+  const { posts } = useSelector((state) => state.posts);
 
   useEffect(() => {
     dispatch(getPosts());
   }, [dispatch]);
-
-  console.log(posts)
 
   return (
     <div className="App">
@@ -55,10 +50,6 @@ function Home() {
             </Grid>
           ))}
         </Grid.Container>
-
-        <div className="pagination">
-          <Pagination rounded total={5} initialPage={page} />
-        </div>
       </Container>
 
       <Footer />
